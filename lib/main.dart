@@ -1,4 +1,3 @@
-import 'package:coinalysis/pages/homepage.dart';
 import 'package:coinalysis/routes.dart';
 import 'package:flutter/material.dart';
 
