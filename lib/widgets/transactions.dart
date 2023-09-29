@@ -8,7 +8,7 @@ class API {
   Future Transact({required String str}) async {
     resp = await dio.get("https://blockchain.info/rawaddr/$str");
     // print(resp);
-    print(resp.data['address']);
+    // print(resp.data['address']);
     return resp;
   }
 
