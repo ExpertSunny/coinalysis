@@ -1,6 +1,8 @@
 import 'package:coinalysis/res/colours.dart';
+import 'package:coinalysis/view_model/addr_vm.dart';
 import 'package:coinalysis/widgets/transactions.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Explorer extends StatefulWidget {
   const Explorer({super.key});
@@ -14,6 +16,7 @@ class _ExplorerState extends State<Explorer> {
   String str = "";
   @override
   Widget build(BuildContext context) {
+    final addrVM = Provider.of<AddrVM>(context);
     return Container(
         color: Colours.primBg,
         child: Center(
@@ -76,7 +79,8 @@ class _ExplorerState extends State<Explorer> {
                 ),
                 if (!isHidden)
                   FutureBuilder(
-                    future: API().Transact(str: str),
+                    future: addrVM.addrApi(str),
+                    // future: API().Transact(str: str),
                     // initialData: InitialData,
                     builder: (BuildContext context, AsyncSnapshot snapshot) {
                       switch (snapshot.connectionState) {
