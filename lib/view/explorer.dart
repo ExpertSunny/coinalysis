@@ -1,4 +1,4 @@
-import 'package:coinalysis/consts.dart';
+import 'package:coinalysis/res/colours.dart';
 import 'package:coinalysis/widgets/transactions.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class _ExplorerState extends State<Explorer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: primBg,
+        color: Colours.primBg,
         child: Center(
           child: SingleChildScrollView(
             child: Column(

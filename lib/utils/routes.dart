@@ -1,6 +1,6 @@
-import 'package:coinalysis/pages/aboutpage.dart';
-import 'package:coinalysis/pages/explorer.dart';
-import 'package:coinalysis/pages/homepage.dart';
+import 'package:coinalysis/view/aboutpage.dart';
+import 'package:coinalysis/view/explorer.dart';
+import 'package:coinalysis/view/homepage.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(

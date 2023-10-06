@@ -1,4 +1,4 @@
-import 'package:coinalysis/consts.dart';
+import 'package:coinalysis/res/colours.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
           widget.title,
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: primWidg,
+        backgroundColor: Colours.primWidg,
         actions: [
           OutlinedButton(
             onPressed: () {
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Container(
-        color: primBg,
+        color: Colours.primBg,
         child: widget.child,
       ),
     );

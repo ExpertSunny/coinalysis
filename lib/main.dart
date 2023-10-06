@@ -1,4 +1,4 @@
-import 'package:coinalysis/routes.dart';
+import 'package:coinalysis/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
