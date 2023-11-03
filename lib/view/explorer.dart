@@ -79,8 +79,8 @@ class _ExplorerState extends State<Explorer> {
                 ),
                 if (!isHidden)
                   FutureBuilder(
-                    future: addrVM.addrApi(str),
-                    // future: API().Transact(str: str),
+                    // future: addrVM.addrApi(str),
+                    future: API().Transact(str: str),
                     // initialData: InitialData,
                     builder: (BuildContext context, AsyncSnapshot snapshot) {
                       switch (snapshot.connectionState) {
