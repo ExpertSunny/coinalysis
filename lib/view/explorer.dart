@@ -29,22 +29,23 @@ class _ExplorerState extends State<Explorer> {
                   height: 100,
                   width: 700,
                   child: TextField(
-                    onChanged: (text) {
-                      str = text;
-                    },
-                    decoration: InputDecoration(
-                      labelText: 'Enter Transaction ID / Wallet Address',
-                      border: OutlineInputBorder(),
-                    ).copyWith(
-                      labelStyle: TextStyle(color: Colors.white),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                      onChanged: (text) {
+                        str = text;
+                      },
+                      decoration: InputDecoration(
+                        labelText: 'Enter Transaction ID / Wallet Address',
+                        border: OutlineInputBorder(),
+                      ).copyWith(
+                        labelStyle: TextStyle(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                        ),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                      ),
-                    ),
-                  ),
+                      style: TextStyle(color: Colors.white),
+                      cursorColor: Colors.white),
                 ),
                 Container(
                   // height: 100,
