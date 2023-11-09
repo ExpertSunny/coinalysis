@@ -1,7 +1,7 @@
 import 'package:coinalysis/model/trans.dart';
 import 'package:coinalysis/res/colours.dart';
 import 'package:coinalysis/view_model/addr_vm.dart';
-import 'package:coinalysis/widgets/transactions.dart';
+import 'package:coinalysis/widgets/walletsummary.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +30,6 @@ class _ExplorerState extends State<Explorer> {
                   height: 100,
                   width: 700,
                   child: TextField(
-<<<<<<< HEAD
                     onChanged: (text) {
                       str = text;
                     },
@@ -41,25 +40,12 @@ class _ExplorerState extends State<Explorer> {
                       labelStyle: TextStyle(color: Colors.white),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
-=======
-                      onChanged: (text) {
-                        str = text;
-                      },
-                      decoration: InputDecoration(
-                        labelText: 'Enter Transaction ID / Wallet Address',
-                        border: OutlineInputBorder(),
-                      ).copyWith(
-                        labelStyle: TextStyle(color: Colors.white),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                        ),
->>>>>>> 9bc2602f316a95b218d0c32d4bafc85e564a2e80
                       ),
-                      style: TextStyle(color: Colors.white),
-                      cursorColor: Colors.white),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                    ),
+                  ),
                 ),
                 Container(
                   // height: 100,
