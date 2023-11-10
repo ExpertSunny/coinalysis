@@ -55,7 +55,7 @@ class TransactionDetail {
   final List<TransactionOutput> outputs;
   final int result;
   final int balance;
-  final bool rbf;
+  // final bool rbf;
 
   TransactionDetail({
     required this.hash,
@@ -74,7 +74,7 @@ class TransactionDetail {
     required this.outputs,
     required this.result,
     required this.balance,
-    required this.rbf,
+    // required this.rbf,
   });
 
   factory TransactionDetail.fromJson(Map<String, dynamic> json) {
@@ -103,7 +103,7 @@ class TransactionDetail {
       outputs: outputs,
       result: json['result'],
       balance: json['balance'],
-      rbf: json['rbf'],
+      // rbf: json['rbf'],
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:coinalysis/model/trans.dart';
 import 'package:coinalysis/res/colours.dart';
 import 'package:coinalysis/view_model/addr_vm.dart';
-import 'package:coinalysis/widgets/walletsummary.dart';
+import 'package:coinalysis/res/components/walletsummary.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -95,7 +95,13 @@ class _ExplorerState extends State<Explorer> {
                             return Text('Error: ${snapshot.error}');
                           } else if (snapshot.hasData) {
                             BitcoinTransaction data = snapshot.data!;
-                            return Text(data.address);
+                            return walletSummary(
+                              address: data.address,
+                              transactions: data.transactions,
+                              received: data.totalReceived,
+                              sent: data.totalSent,
+                              finalbal: data.finalBalance,
+                            );
                           } else {
                             return const Text('No data available.');
                           }
