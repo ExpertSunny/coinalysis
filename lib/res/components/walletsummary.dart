@@ -22,13 +22,13 @@ class walletSummary extends StatelessWidget {
     List<TransactionOutput> out = transactions[1].outputs;
     return Column(children: [
       Text(
-        address,
-        style: TxtStyl.heading,
+        "Address: ${address}",
+        style: TextStyle(fontSize: 20, color: Colors.white),
       ),
-      Text(
-        "Number of Transactions: ${transactions.length}",
-        style: TxtStyl.norm,
-      ),
+      // Text(
+      //   "Number of Transactions: ${transactions.length}",
+      //   style: TxtStyl.norm,
+      // ),
       Text(
         "Total Received: ${received / 100000000} BTC",
         style: TxtStyl.norm,
