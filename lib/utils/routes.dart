@@ -1,6 +1,8 @@
+import 'package:coinalysis/res/components/walletsummary.dart';
 import 'package:coinalysis/view/aboutpage.dart';
 import 'package:coinalysis/view/explorer.dart';
 import 'package:coinalysis/view/homepage.dart';
+import 'package:coinalysis/view/walletdetails.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(
@@ -20,6 +22,11 @@ final GoRouter router = GoRouter(
             path: '/explorer',
             pageBuilder: (context, state) =>
                 const NoTransitionPage(child: Explorer()),
+          ),
+          GoRoute(
+            path: '/walletdetails',
+            builder: (context, state) =>
+                WalletDetails(address: state.extra! as String),
           ),
           // GoRoute(
           //   path: '/blog',

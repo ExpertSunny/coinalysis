@@ -3,6 +3,7 @@ import 'package:coinalysis/res/colours.dart';
 import 'package:coinalysis/view_model/addr_vm.dart';
 import 'package:coinalysis/res/components/walletsummary.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class Explorer extends StatefulWidget {
@@ -17,7 +18,6 @@ class _ExplorerState extends State<Explorer> {
   String str = "";
   @override
   Widget build(BuildContext context) {
-    final addrVM = Provider.of<AddrVM>(context);
     return Container(
         color: Colours.primBg,
         child: Center(
@@ -53,9 +53,7 @@ class _ExplorerState extends State<Explorer> {
                   child: ElevatedButton(
                     onPressed: () {
                       // Your code here
-                      setState(() {
-                        isHidden = false;
-                      });
+                      context.go('/walletdetails', extra: str);
                     },
                     child: const Text(
                       "Search",
@@ -79,35 +77,6 @@ class _ExplorerState extends State<Explorer> {
                     ),
                   ),
                 ),
-                if (!isHidden)
-                  FutureBuilder<BitcoinTransaction>(
-                    future: addrVM.addrApi(str),
-                    builder:
-                        (context, AsyncSnapshot<BitcoinTransaction> snapshot) {
-                      switch (snapshot.connectionState) {
-                        case ConnectionState.none:
-                          return const Text('Press button to start.');
-                        case ConnectionState.active:
-                        case ConnectionState.waiting:
-                          return const CircularProgressIndicator();
-                        case ConnectionState.done:
-                          if (snapshot.hasError) {
-                            return Text('Error: ${snapshot.error}');
-                          } else if (snapshot.hasData) {
-                            BitcoinTransaction data = snapshot.data!;
-                            return walletSummary(
-                              address: data.address,
-                              transactions: data.transactions,
-                              received: data.totalReceived,
-                              sent: data.totalSent,
-                              finalbal: data.finalBalance,
-                            );
-                          } else {
-                            return const Text('No data available.');
-                          }
-                      }
-                    },
-                  )
               ],
             ),
           ),
